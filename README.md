@@ -1,8 +1,17 @@
-# React + Vite
+# Shameless
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el repositorio de la parte del frontend para el [hackacode](https://hackacode.todocodeacademy.com/).
+Esta boostrapeado con vite, hecho con react, y sass.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Corre este proyecto
+
+```
+git clone https://github.com/franciscoG98/shameless_front.git
+npm install
+npm run dev
+```
+
+node v20.9.0
+
+npm v10.1.0
