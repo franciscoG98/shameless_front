@@ -7,6 +7,7 @@ import {
 
 import Home from './views/Home.jsx';
 import Login from './views/Login.jsx';
+import Register from './views/Register.jsx';
 
 import './assets/sass/global.scss'
 
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 

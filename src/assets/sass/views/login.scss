@@ -38,6 +38,18 @@
   width: 240px;
 }
 
+.login__link--to-register {
+  color: var(--s-color-quaternary);
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.login__link--to-register:hover {
+  color: var(--s-color-secondary);
+  text-decoration: none;
+  transition: .2s ease-in-out;
+}
+
 .form__button {
   background-color: var(--s-color-primary);
   border-radius: 12px;
