@@ -8,6 +8,8 @@ import {
 import Home from './views/Home.jsx';
 import Login from './views/Login.jsx';
 import Register from './views/Register.jsx';
+import Hotels from './views/Hotels.jsx';
+import ErrorPage from './views/ErrorPage.jsx';
 
 import './assets/sass/global.scss'
 
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/hotels",
+    element: <Hotels />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 

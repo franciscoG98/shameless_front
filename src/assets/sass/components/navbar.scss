@@ -1,0 +1,35 @@
+.navbar__container {}
+
+.navbar__link--home {
+  color: var(--s-color-primary);
+  display: flex;
+  font-size: 48px;
+  font-weight: 900;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20px;
+  padding-block: 16px;
+  gap: 32px;
+  width: fit-content;
+}
+
+.navbar__link {
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--s-color-secondary);
+}
+
+.navbar__link:hover {
+  text-decoration: underline;
+  transition: .3s;
+}
+
+a.active {
+  color: var(--s-color-primary);
+  font-weight: 900;
+}
