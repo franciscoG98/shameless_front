@@ -1,0 +1,30 @@
+.form__car-rental {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 3.5em;
+  width: fit-content;
+}
+
+.form__title--car-rental {
+  margin: auto;
+}
+
+.form__input--carrental {
+  @include input;
+
+  margin-bottom: 12px;
+}
+
+.form__btn--car-rental {
+  @include button;
+
+  margin: auto;
+  margin-top: 24px;
+}
+
+.form__btn--car-rental:hover {
+  color: var(--s-color-secondary);
+  transition: .3s ease-in-out;
+}

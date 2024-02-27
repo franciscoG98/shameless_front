@@ -9,6 +9,7 @@ import Home from './views/Home.jsx';
 import Login from './views/Login.jsx';
 import Register from './views/Register.jsx';
 import Hotels from './views/Hotels.jsx';
+import Admin from './views/Admin.jsx';
 import ErrorPage from './views/ErrorPage.jsx';
 
 import './assets/sass/global.scss'
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/hotels",
     element: <Hotels />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
   },
   {
     path: "*",

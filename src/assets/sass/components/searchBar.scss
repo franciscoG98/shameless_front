@@ -1,0 +1,24 @@
+.searchbar__form {
+  margin: auto;
+  width: fit-content;
+}
+
+.searchbar__input {
+  border: none;
+  border-right: 2px solid var(--s-color-quaternary);
+  padding: 20px 16px;
+}
+
+.searchbar__input:nth-child(1) {
+  border-radius: 12px 0 0 12px;
+}
+
+.searchbar__button {
+  color: var(--s-color-secondary);
+  background-color: var(--s-color-primary);
+  border: none;
+  border-radius: 0 12px 12px 0;
+  font-weight: 700;
+  outline: none;
+  padding: 20px 16px;
+}
