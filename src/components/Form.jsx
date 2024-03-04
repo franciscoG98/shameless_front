@@ -8,7 +8,7 @@ const Form = ({ state, handleChange, handleSubmit, fields, action }) => {
   // input le falta el value
 
   return (
-    <form action={action} method="post" className="form__container">
+    <form  method="post" className="form__container" onSubmit={(e) => handleSubmit(e)}>
       {fields.map((field, idx) => (
         <fieldset className="form__fieldset" key={idx}>
           <label htmlFor={field.id}>{field.label}</label>
@@ -57,7 +57,6 @@ const Form = ({ state, handleChange, handleSubmit, fields, action }) => {
       <button
         className="form__btn"
         type="submit"
-        onSubmit={(e) => handleSubmit(e)}
       >
         Buscar
       </button>
