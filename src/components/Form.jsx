@@ -1,11 +1,53 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const Form = ({ state, handleChange, handleSubmit, fields, action }) => {
+const Form = ({ fields, fetchUrl }) => {
 
-  // should change initialState name when updating or sending
-  useEffect(() => {}, [state]);
+  const initialState = fields.reduce((acc, curr) => {
+    acc[curr.id] = '';
+    return acc;
+  }, {});
 
-  // input le falta el value
+  // @fix: min date today in initialState
+  // @fix: required fields
+
+  const [productState, setProductState] = useState(initialState)
+
+  useEffect(() => {}, [productState]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // @fix: delete this when finish debugging
+    console.log('form data:\n' , productState);
+
+    fetch(fetchUrl, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: productState
+    })
+    .then( async res => {
+      if(res.ok) {
+        setProductState(initialState)
+        alert('form ok')
+      } else {
+        console.log('Hay un error')
+      }
+    })
+    .catch((err) => {
+      console.log('Error: ', err)
+    })
+
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProductState({ ...productState, [name]: value });
+  };
+
+  console.log();
 
   return (
     <form  method="post" className="form__container" onSubmit={(e) => handleSubmit(e)}>
@@ -24,6 +66,8 @@ const Form = ({ state, handleChange, handleSubmit, fields, action }) => {
                     id={field.id}
                     rows={field.rows}
                     onChange={(e) => handleChange(e)}
+                    required={true}
+                    value={productState[field.id]}
                   ></textarea>
                 );
               case "number":
@@ -34,6 +78,8 @@ const Form = ({ state, handleChange, handleSubmit, fields, action }) => {
                     name={field.id}
                     id={field.id}
                     onChange={(e) => handleChange(e)}
+                    required={true}
+                    value={productState[field.id]}
                     min={field.numbMin}
                     max={field.numbMax}
                   />
@@ -46,6 +92,8 @@ const Form = ({ state, handleChange, handleSubmit, fields, action }) => {
                     name={field.id}
                     id={field.id}
                     onChange={(e) => handleChange(e)}
+                    required={true}
+                    value={productState[field.id]}
                   />
                 );
             }

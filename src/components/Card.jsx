@@ -5,6 +5,7 @@ const Card = ({ data }) => {
   const { name, ubication, descript, numbOfRooms, startDate, price, status } = {...data};
 
   // @fix: validation with status vble
+  console.log(status);
   // @fix: make more generic to adapt to differents props
 
   return (
