@@ -1,6 +1,8 @@
-import Form from "../../components/Form";
+import Form from "../../components/Form"
 
-const AdminClient = () => {
+const AdminEmployee = () => {
+
+  // position(este es el select,   las opciones son EMPLOYEE,MANAGER), salary
 
   const fields = [
     {
@@ -44,7 +46,23 @@ const AdminClient = () => {
       id: "email",
       label: "Email",
       inputType: "email",
+    },
+    {
+      id: "position",
+      label: "Posición",
+      inputType: "select",
+      options: [
+        {
+          label: "Gerente",
+          value: "MANAGER",
+        },
+        {
+          label: "Empleado",
+          value: "EMPLOYEE",
+        }
+      ]
     }
+
   ]
 
   return (
@@ -59,4 +77,4 @@ const AdminClient = () => {
   )
 }
 
-export default AdminClient
+export default AdminEmployee

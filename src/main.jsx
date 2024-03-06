@@ -15,6 +15,7 @@ import Admin from './views/Admin.jsx';
 import AdminCarRental from './views/admin-views/AdminCarRental.jsx';
 import AdminHotel from './views/admin-views/AdminHotel.jsx';
 import AdminClient from './views/admin-views/AdminClient.jsx';
+import AdminEmployee from './views/admin-views/AdminEmployee.jsx';
 
 import ErrorPage from './views/ErrorPage.jsx';
 
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       { 
         path: "client",
         element: <AdminClient />
+      },
+      { 
+        path: "employee",
+        element: <AdminEmployee />
       },
     ]
   },

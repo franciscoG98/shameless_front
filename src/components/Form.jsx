@@ -82,6 +82,24 @@ const Form = ({ fields, fetchUrl }) => {
                     max={field.numbMax}
                   />
                 );
+              case "select":
+                return (
+                  <select
+                    className="form__input"
+                    name={field.id}
+                    id={field.id}
+                    onChange={(e) => handleChange(e)}
+                    required={true}
+                    value={productState[field.id]}
+                  >
+                    <option value="" default>Elija una posición</option>
+                    {
+                      field.options.map((i, idx) => (
+                        <option key={idx} value={i.value}>{i.label}</option>
+                      ))
+                    }
+                  </select>
+                );
               default:
                 return (
                   <input

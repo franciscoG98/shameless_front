@@ -14,6 +14,7 @@ const Navbar = ({ admin }) => {
             <NavLink className="navbar__link" to="/admin/car-rental">Car Rental</NavLink>
             <NavLink className="navbar__link" to="/admin/hotel">Hotel</NavLink>
             <NavLink className="navbar__link" to="/admin/client">Cliente</NavLink>
+            <NavLink className="navbar__link" to="/admin/employee">Empleado</NavLink>
           </nav>
         ) : (
           <nav className="navbar">
