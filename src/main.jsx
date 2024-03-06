@@ -14,6 +14,7 @@ import Hotels from './views/Hotels.jsx';
 import Admin from './views/Admin.jsx';
 import AdminCarRental from './views/admin-views/AdminCarRental.jsx';
 import AdminHotel from './views/admin-views/AdminHotel.jsx';
+import AdminClient from './views/admin-views/AdminClient.jsx';
 
 import ErrorPage from './views/ErrorPage.jsx';
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       { 
         path: "hotel",
         element: <AdminHotel />
+      },
+      { 
+        path: "client",
+        element: <AdminClient />
       },
     ]
   },

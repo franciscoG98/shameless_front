@@ -43,7 +43,7 @@ const CarRental = () => {
 
       <Form
         fields={fields}
-        fetchUrl={"https://localhost:8080/carrental/registry"}
+        fetchUrl={"http://localhost:8080/carrental/registry"}
       />
     </>
   )

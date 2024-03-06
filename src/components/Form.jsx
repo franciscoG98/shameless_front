@@ -16,8 +16,6 @@ const Form = ({ fields, fetchUrl }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // @fix: delete this when finish debugging
-    console.log('form data:\n' , productState);
 
     fetch(fetchUrl, {
       method: "POST",
@@ -26,7 +24,7 @@ const Form = ({ fields, fetchUrl }) => {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: productState
+      body: JSON.stringify(productState)
     })
     .then( async res => {
       if(res.ok) {

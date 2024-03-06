@@ -13,6 +13,7 @@ const Navbar = ({ admin }) => {
             <NavLink className="navbar__link" to="/admin">Admin Dashboard</NavLink>
             <NavLink className="navbar__link" to="/admin/car-rental">Car Rental</NavLink>
             <NavLink className="navbar__link" to="/admin/hotel">Hotel</NavLink>
+            <NavLink className="navbar__link" to="/admin/client">Cliente</NavLink>
           </nav>
         ) : (
           <nav className="navbar">

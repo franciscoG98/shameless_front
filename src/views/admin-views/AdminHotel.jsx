@@ -41,7 +41,7 @@ const AdminHotel = () => {
       <h1 className="form__title">Hotel</h1>
 
       <Form
-        fetchUrl={"https://localhost:8080/hotel..."}
+        fetchUrl={"http://localhost:8080/hotel..."}
         fields={fields}
       />
     </>
