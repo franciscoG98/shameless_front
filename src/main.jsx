@@ -18,6 +18,7 @@ import AdminClient from './views/admin-views/AdminClient.jsx';
 import AdminEmployee from './views/admin-views/AdminEmployee.jsx';
 import AdminEvents from './views/admin-views/AdminEvent.jsx';
 import AdminExcursion from './views/admin-views/AdminExcursion.jsx';
+import AdminTickets from './views/admin-views/AdminTickets.jsx';
 
 import ErrorPage from './views/ErrorPage.jsx';
 
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/excusion",
     element: <AdminExcursion />,
+  },
+  {
+    path: "/admin/tickets",
+    element: <AdminTickets />
   },
   {
     path: "*",

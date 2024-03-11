@@ -70,7 +70,7 @@ const AdminEmployee = () => {
     <>
       <Navbar admin={true} />
 
-      <h1 className="form__title">Cliente</h1>
+      <h1 className="form__title">Empleado</h1>
 
       <Form
         fetchUrl={"http://localhost:8080/employee/registry"}

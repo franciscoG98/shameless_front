@@ -35,6 +35,9 @@ const Navbar = ({ admin }) => {
           <NavLink className="navbar__link" to="/admin/excusion">
             Excursiones
           </NavLink>
+          <NavLink className="navbar__link" to="/admin/tickets">
+            Pasajes
+          </NavLink>
           <NavLink className="navbar__link" to="/admin/hotel">
             Hotel
           </NavLink>

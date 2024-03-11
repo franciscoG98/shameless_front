@@ -20,6 +20,11 @@ const AdminExcursion = () => {
       inputType: "text",
     },
     {
+      id: "origin",
+      label: "Origen",
+      inputType: "text",
+    },
+    {
       id: "duration",
       label: "Duración",
       inputType: "number",

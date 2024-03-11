@@ -15,4 +15,3 @@ export const getCars = async () => {
 // @fix: pending
 // http://localhost:8080/sale/registry
 // http://localhost:8080/tickets/registry
-// http://localhost:8080/touristpackage/registry
