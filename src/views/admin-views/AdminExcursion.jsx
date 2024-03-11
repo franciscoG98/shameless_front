@@ -1,7 +1,7 @@
 import Form from "../../components/Form";
 import Navbar from "../../components/Navbar";
 
-const AdminHotel = () => {
+const AdminExcursion = () => {
 
   const fields = [
     {
@@ -10,20 +10,19 @@ const AdminHotel = () => {
       inputType: "text",
     },
     {
-      id: "ubication",
-      label: "Ubicación",
-      inputType: "text",
-    },
-    {
-      id: "numbOfRooms",
-      label: "Número de Habitaciones",
-      inputType: "number",
-    },
-    {
       id: "descript",
       label: "Descripción",
       inputType: "textarea",
-      rows: "3"
+    },
+    {
+      id: "destination",
+      label: "Destino",
+      inputType: "text",
+    },
+    {
+      id: "duration",
+      label: "Duración",
+      inputType: "number",
     },
     {
       id: "startDate",
@@ -34,21 +33,21 @@ const AdminHotel = () => {
       id: "price",
       label: "Precio",
       inputType: "number",
-    },
+    }
   ]
 
   return (
     <>
       <Navbar admin={true} />
 
-      <h1 className="form__title">Hotel</h1>
+      <h1 className="form__title">Excursiones</h1>
 
       <Form
-        fetchUrl={"http://localhost:8080/hotelpernight/registry"}
+        fetchUrl={"http://localhost:8080/excursion/registry"}
         fields={fields}
       />
     </>
   )
 }
 
-export default AdminHotel
+export default AdminExcursion

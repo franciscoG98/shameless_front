@@ -1,4 +1,5 @@
 import Form from "../../components/Form";
+import Navbar from "../../components/Navbar";
 
 const CarRental = () => {
 
@@ -38,14 +39,16 @@ const CarRental = () => {
   ]
 
   return (
-    <>
+    <main>
+      <Navbar admin={true} />
+
       <h1 className="form__title">Renta de Autos</h1>
 
       <Form
         fields={fields}
         fetchUrl={"http://localhost:8080/carrental/registry"}
       />
-    </>
+    </main>
   )
 }
 

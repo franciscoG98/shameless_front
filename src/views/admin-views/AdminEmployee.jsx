@@ -1,8 +1,9 @@
 import Form from "../../components/Form"
+import Navbar from "../../components/Navbar"
 
 const AdminEmployee = () => {
 
-  // position(este es el select,   las opciones son EMPLOYEE,MANAGER), salary
+  // position(este es el select, las opciones son EMPLOYEE,MANAGER), salary
 
   const fields = [
     {
@@ -67,10 +68,12 @@ const AdminEmployee = () => {
 
   return (
     <>
+      <Navbar admin={true} />
+
       <h1 className="form__title">Cliente</h1>
 
       <Form
-        fetchUrl={"http://localhost:8080/client"}
+        fetchUrl={"http://localhost:8080/employee/registry"}
         fields={fields}
       />
     </>

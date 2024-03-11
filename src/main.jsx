@@ -16,6 +16,8 @@ import AdminCarRental from './views/admin-views/AdminCarRental.jsx';
 import AdminHotel from './views/admin-views/AdminHotel.jsx';
 import AdminClient from './views/admin-views/AdminClient.jsx';
 import AdminEmployee from './views/admin-views/AdminEmployee.jsx';
+import AdminEvents from './views/admin-views/AdminEvent.jsx';
+import AdminExcursion from './views/admin-views/AdminExcursion.jsx';
 
 import ErrorPage from './views/ErrorPage.jsx';
 
@@ -38,32 +40,59 @@ const router = createBrowserRouter([
     path: "/hotels",
     element: <Hotels />,
   },
+  // {
+  //   path: "admin",
+  //   element: (
+  //     <>
+  //       <Admin />
+  //       <Outlet />
+  //     </>
+  //   ),
+  //   element: <AdminWithSubroutes />,
+  //   children: [
+  //     { 
+  //       path: "car-rental",
+  //       element: <AdminCarRental />
+  //     },
+  //     { 
+  //       path: "hotel",
+  //       element: <AdminHotel />
+  //     },
+  //     { 
+  //       path: "client",
+  //       element: <AdminClient />
+  //     },
+  //     { 
+  //       path: "employee",
+  //       element: <AdminEmployee />
+  //     },
+  //   ]
+  // },
   {
-    path: "admin",
-    element: (
-      <>
-        <Admin />
-        <Outlet />
-      </>
-    ),
-    children: [
-      { 
-        path: "car-rental",
-        element: <AdminCarRental />
-      },
-      { 
-        path: "hotel",
-        element: <AdminHotel />
-      },
-      { 
-        path: "client",
-        element: <AdminClient />
-      },
-      { 
-        path: "employee",
-        element: <AdminEmployee />
-      },
-    ]
+    path: "/admin",
+    element: <Admin />,
+  },
+  {
+    path: "/admin/car-rental",
+    element: <AdminCarRental />,
+  },  {
+    path: "/admin/hotel",
+    element: <AdminHotel />,
+  },  {
+    path: "/admin/client",
+    element: <AdminClient />,
+  },
+  {
+    path: "/admin/employee",
+    element: <AdminEmployee />,
+  },
+  {
+    path: "/admin/events",
+    element: <AdminEvents />,
+  },
+  {
+    path: "/admin/excusion",
+    element: <AdminExcursion />,
   },
   {
     path: "*",
