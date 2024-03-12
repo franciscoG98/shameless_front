@@ -62,7 +62,7 @@ const AdminTickets = () => {
       <h1 className="form__title">Pasajes</h1>
 
       <Form
-        fetchUrl={"http://localhost:8080/touristpackage/registry"}
+        fetchUrl={"http://localhost:8080/tickets/registry"}
         fields={fields}
       />
     </>
