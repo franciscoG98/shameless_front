@@ -41,6 +41,9 @@ const Navbar = ({ admin }) => {
           <NavLink className="navbar__link" to="/admin/hotel">
             Hotel
           </NavLink>
+          <NavLink className="navbar__link" to="/admin/packages">
+            Paquetes
+          </NavLink>
         </nav>
       ) : (
         <nav className="navbar">

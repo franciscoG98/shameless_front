@@ -23,6 +23,7 @@ import AdminTickets from './views/admin-views/AdminTickets.jsx';
 import ErrorPage from './views/ErrorPage.jsx';
 
 import './assets/sass/global.scss'
+import AdminPackage from './views/admin-views/AdminPackage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/tickets",
     element: <AdminTickets />
+  },
+  {
+    path: "/admin/packages",
+    element: <AdminPackage />
   },
   {
     path: "*",
