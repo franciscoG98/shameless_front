@@ -37,7 +37,31 @@ const Form = ({ fields, fetchUrl }) => {
     .catch((err) => {
       console.log('Error: ', err)
     })
+  }
 
+  const handleEdit = (e) => {
+    e.preventDefault();
+
+    fetch(fetchUrl, {
+      method: "PUT",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify(productState)
+    })
+    .then( async res => {
+      if(res.ok) {
+        setProductState(initialState)
+        alert('form ok')
+      } else {
+        console.log('Hay un error')
+      }
+    })
+    .catch((err) => {
+      console.log('Error: ', err)
+    })
   }
 
   const handleChange = (e) => {
@@ -123,6 +147,15 @@ const Form = ({ fields, fetchUrl }) => {
         type="submit"
       >
         Buscar
+      </button>
+
+      <br />
+
+      <button
+        className="form__btn"
+        onSubmit={(e) => handleEdit(e)}
+      >
+        Editar
       </button>
     </form>
   );
