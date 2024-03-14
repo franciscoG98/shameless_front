@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "../../components/Form";
 import Navbar from "../../components/Navbar";
 import { getProducts } from "../../service/getProducts";
@@ -7,23 +7,27 @@ const AdminPackage = () => {
 
   const [cars, setCars] = useState([]);
 
-  console.log("cars");
-  getProducts("carrental/get-cars");
+  useEffect(() => {
+    const fetchData = async () => {
+      const products = await getProducts("carrental/get-cars");
+      setCars(products);
+    };
 
-  // setCars(...cars, getProducts("carrental/get-cars"))
+    fetchData();
+  }, []);
 
   const fields = [
     {
-      id: "ticketType",
+      id: "car",
       label: "Tipo de Auto",
       inputType: "select",
-      options: [
-        // cars?.map(car => (
-        //   {
-        //     label: car.name,
-        //     value: car.productCode,
-        //   }
-        // ))
+      options: [ 
+        cars?.map(car => (
+          {
+            label: car.name,
+            value: car.productCode,
+          }
+        ))
       ]
     },
   ]
