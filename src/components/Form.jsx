@@ -122,7 +122,7 @@ const Form = ({ fields, fetchUrl }) => {
         className="form__btn"
         type="submit"
       >
-        Buscar
+        Crear
       </button>
     </form>
   );

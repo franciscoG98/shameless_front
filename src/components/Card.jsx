@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Card = ({ data }) => {
 
   const { name, ubication, descript, numbOfRooms, startDate, price, status } = {...data};

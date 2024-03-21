@@ -1,6 +1,8 @@
 .card__container {
-  border: 1px solid var(--s-color-secondary);
+  // border: 1px solid var(--s-color-secondary);
+  border: 1px solid var(--s-color-quaternary);
   border-radius: 12px;
+  color: var(--s-color-tertiary);
   height: 480px;
   margin: 0 auto;
   width: 300px;
