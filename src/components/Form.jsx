@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Form = ({ fields, fetchUrl }) => {
 
@@ -29,13 +30,16 @@ const Form = ({ fields, fetchUrl }) => {
     .then( async res => {
       if(res.ok) {
         setProductState(initialState)
-        alert('form ok')
+        // alert('form ok')
+        toast.success('Formulario enviado exitosamente!')
       } else {
         console.log('Hay un error')
+        toast.error("Oh no! ocurrió un error :(")
       }
     })
     .catch((err) => {
       console.log('Error: ', err)
+      toast.error("Oh no! ocurrió un error :(")
     })
 
   }
@@ -49,6 +53,8 @@ const Form = ({ fields, fetchUrl }) => {
 
   return (
     <form  method="post" className="form__container" onSubmit={(e) => handleSubmit(e)}>
+      <div><Toaster/></div>
+
       {fields.map((field, idx) => (
         <fieldset className="form__fieldset" key={idx}>
           <label htmlFor={field.id}>{field.label}</label>
