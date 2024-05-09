@@ -1,9 +1,7 @@
-import Form from "../../components/Form"
-import Navbar from "../../components/Navbar"
+import Form from "../../../components/Form";
+import Navbar from "../../../components/Navbar";
 
-const AdminEmployee = () => {
-
-  // position(este es el select, las opciones son EMPLOYEE,MANAGER), salary
+const AdminClient = () => {
 
   const fields = [
     {
@@ -47,37 +45,21 @@ const AdminEmployee = () => {
       id: "email",
       label: "Email",
       inputType: "email",
-    },
-    {
-      id: "position",
-      label: "Posición",
-      inputType: "select",
-      options: [
-        {
-          label: "Gerente",
-          value: "MANAGER",
-        },
-        {
-          label: "Empleado",
-          value: "EMPLOYEE",
-        }
-      ]
     }
-
   ]
 
   return (
     <>
       <Navbar admin={true} />
 
-      <h1 className="form__title">Empleado</h1>
+      <h1 className="form__title">Cliente</h1>
 
       <Form
-        fetchUrl={"http://localhost:8080/employee/registry"}
+        fetchUrl={"http://localhost:8080/client/registry"}
         fields={fields}
       />
     </>
   )
 }
 
-export default AdminEmployee
+export default AdminClient

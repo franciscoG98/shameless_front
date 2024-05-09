@@ -1,0 +1,31 @@
+.table {
+  border-collapse: collapse;
+  margin-left: 24rem;
+  margin-top: 3rem;
+  text-align: left;
+  width: 800px;
+}
+
+.table, th, td {
+  border: 1px solid;
+  word-break: break-word;
+}
+
+th {
+  padding: 12px 8px;
+  text-align: center;
+}
+
+td {
+  padding: 8px;
+  max-width: 2.5rem;
+}
+
+.table__btn {
+  background-color: transparent;
+  border: none;
+}
+
+.table__btn--edit {}
+
+.table__btn--delete {}

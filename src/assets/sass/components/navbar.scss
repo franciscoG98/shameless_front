@@ -1,9 +1,9 @@
 .navbar__container {
-  position: fixed;
   top: 0;
   left: 0;
   // @fix: edit backgound color
-  // background-color: var(--s-color-secondary);
+  // background-color: var(--s-color-tertiary);
+  // border-bottom: 1px solid var(--s-color-quaternary);
 }
 
 .navbar__link--home {
@@ -25,26 +25,60 @@
 }
 
 // admin navbar
-.navbar__link--admin {
+.admin__navbar {
   border-right: 1px solid var(--s-color-quaternary);
+  border-bottom: 0;
+  position: fixed;
+  width: 18rem;
+  height: 100vh;
+}
+
+.navbar__link--admin {
   color: var(--s-color-primary);
   display: flex;
   font-size: 48px;
   font-weight: 900;
   text-decoration: none;
-  margin-left: 12px;
+  margin-left: 2rem;
   width: 15rem;
 }
 
 .navbar--admin {
-  border-right: 1px solid var(--s-color-quaternary);
   display: flex;
   flex-direction: column;
-  height: 20rem;
+  gap: 2.5rem;
   justify-content: space-around;
-  margin-left: 12px;
+  margin-left: 2rem;
+  margin-top: 3rem;
   text-align: left;
   width: 15rem;
+}
+
+.navbar__item--admin {
+  align-items: center;
+  display: flex;
+  font-size: 1.3rem;
+  justify-content: space-between;
+  line-height: normal;
+  list-style: none;
+  margin-right: 1.2rem;
+}
+
+.item__text {
+  width: 8rem
+}
+
+.nav__btn {
+  @include button;
+  background-color: var(--s-color-primary);
+  border-radius: 6px;
+  color: var(--s-color-tertiary);
+  padding: 2px;
+
+    &:hover {
+    transform: scale(1.05);
+    transition: .3s ease-in-out;
+  }
 }
 // admin navbar
 
@@ -52,6 +86,7 @@
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--s-color-secondary);
+  // color: var(--s-color-tertiary);
   white-space: nowrap;
 }
 
@@ -61,6 +96,7 @@
 }
 
 a.active {
+  color: var(--s-color-primary);
   color: var(--s-color-primary);
   font-weight: 900;
   text-decoration: none;

@@ -13,17 +13,16 @@ export const getProducts = async (path) => {
     },
   });
   const products = await response.json();
-  console.log(products);
 
   return products;
 }
 
-// [x] getProducts("carrental/get-cars")
 // getProducts("client/get-clients")
 // getProducts("employee/get-employees")
-// getProducts("eventtickets/get-event-tickets")
-// getProducts("excursion/get-excursions")
-// getProducts("hotelpernight/get-hotels")
+// [x] getProducts("carrental/get-cars")
+// [x] getProducts("hotelpernight/get-hotels")
+// [x] getProducts("eventtickets/get-event-tickets")
+// [x] getProducts("excursion/get-excursions")
+// [x] getProducts("tickets/get-tickets")
 // getProducts("sale/get-sales")
-// getProducts("tickets/get-tickets")
 // getProducts("touristpackage/get-tourist-package")

@@ -1,7 +1,7 @@
-import Form from "../../components/Form";
-import Navbar from "../../components/Navbar";
+import Form from "../../../components/Form";
+import Navbar from "../../../components/Navbar";
 
-const AdminExcursion = () => {
+const AdminEvents = () => {
 
   const fields = [
     {
@@ -15,13 +15,8 @@ const AdminExcursion = () => {
       inputType: "textarea",
     },
     {
-      id: "destination",
-      label: "Destino",
-      inputType: "text",
-    },
-    {
-      id: "origin",
-      label: "Origen",
+      id: "ubication",
+      label: "Ubicación",
       inputType: "text",
     },
     {
@@ -45,14 +40,14 @@ const AdminExcursion = () => {
     <>
       <Navbar admin={true} />
 
-      <h1 className="form__title">Excursiones</h1>
+      <h1 className="form__title">Eventos</h1>
 
       <Form
-        fetchUrl={"http://localhost:8080/excursion/registry"}
+        fetchUrl={"http://localhost:8080/eventtickets/registry"}
         fields={fields}
       />
     </>
   )
 }
 
-export default AdminExcursion
+export default AdminEvents

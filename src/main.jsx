@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
   RouterProvider,
-  Outlet
 } from "react-router-dom";
 
 import Home from './views/Home.jsx';
@@ -12,18 +11,25 @@ import Register from './views/Register.jsx';
 import Hotels from './views/Hotels.jsx';
 // admin
 import Admin from './views/Admin.jsx';
-import AdminCarRental from './views/admin-views/AdminCarRental.jsx';
-import AdminHotel from './views/admin-views/AdminHotel.jsx';
-import AdminClient from './views/admin-views/AdminClient.jsx';
-import AdminEmployee from './views/admin-views/AdminEmployee.jsx';
-import AdminEvents from './views/admin-views/AdminEvent.jsx';
-import AdminExcursion from './views/admin-views/AdminExcursion.jsx';
-import AdminTickets from './views/admin-views/AdminTickets.jsx';
+// edit
+import AdminCarRental from './views/admin-views/admin-edit/AdminCarRental.jsx';
+import AdminHotel from './views/admin-views/admin-edit/AdminHotel.jsx';
+import AdminClient from './views/admin-views/admin-edit/AdminClient.jsx';
+import AdminEmployee from './views/admin-views/admin-edit/AdminEmployee.jsx';
+import AdminEvents from './views/admin-views/admin-edit/AdminEvent.jsx';
+import AdminExcursion from './views/admin-views/admin-edit/AdminExcursion.jsx';
+import AdminTickets from './views/admin-views/admin-edit/AdminTickets.jsx';
+import AdminPackage from './views/admin-views/admin-edit/AdminPackage.jsx';
+// list
+import CarRentalList from './views/admin-views/admin-list/CarRentalList.jsx';
+import AdminEventsList from './views/admin-views/admin-list/AdminEventsList.jsx';
+import AdminExcursionList from './views/admin-views/admin-list/AdminExcursionList.jsx';
+import AdminTicketsList from './views/admin-views/admin-list/AdminTicketsList.jsx';
+import AdminHotelList from './views/admin-views/admin-list/AdminHotelList.jsx';
 
 import ErrorPage from './views/ErrorPage.jsx';
 
 import './assets/sass/global.scss'
-import AdminPackage from './views/admin-views/AdminPackage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -77,10 +83,20 @@ const router = createBrowserRouter([
   {
     path: "/admin/car-rental",
     element: <AdminCarRental />,
-  },  {
+  },
+  {
+    path: "/admin/car-rental/list",
+    element: <CarRentalList />
+  },
+  {
     path: "/admin/hotel",
     element: <AdminHotel />,
-  },  {
+  },
+  {
+    path: "/admin/hotel/list",
+    element: <AdminHotelList />,
+  },
+  {
     path: "/admin/client",
     element: <AdminClient />,
   },
@@ -93,12 +109,24 @@ const router = createBrowserRouter([
     element: <AdminEvents />,
   },
   {
-    path: "/admin/excusion",
+    path: "/admin/events/list",
+    element: <AdminEventsList />,
+  },
+  {
+    path: "/admin/excursion",
     element: <AdminExcursion />,
+  },
+  {
+    path: "/admin/excursion/list",
+    element: <AdminExcursionList />,
   },
   {
     path: "/admin/tickets",
     element: <AdminTickets />
+  },
+  {
+    path: "/admin/tickets/list",
+    element: <AdminTicketsList />
   },
   {
     path: "/admin/packages",
