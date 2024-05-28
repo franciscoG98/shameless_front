@@ -1,7 +1,7 @@
 import Form from "../../../components/Form";
 import Navbar from "../../../components/Navbar";
 
-const CarRental = () => {
+const AdminCarRental = () => {
 
   const fields = [
     {
@@ -52,4 +52,4 @@ const CarRental = () => {
   )
 }
 
-export default CarRental
+export default AdminCarRental

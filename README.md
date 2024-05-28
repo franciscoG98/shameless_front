@@ -64,13 +64,18 @@ Ahi van a aparecer los conflictos en tu ide/editor de codigo y te fijas que suce
 
 ## To do
 
-Hice push y borre todas las ramas que habia para terminar bien este proyecto, asi que como esta es lo que hay. Podriamos mas adelante organizar el trello pero por ahora lo que veo es esto:
-
 - [] listar y editar paquetes
+- [] listar clientes y empleado
 - [] funcinon de editar productos (PUT)
 - [] dar funcion a los botones de la lista de productos (btn edit y delete)
 - [] mejorar la vista cliente
 - [] agregar boton de crear a las listas de productos
 - [] hacer un componente lista para los productos (como el de formulario)
+- [] paquetes no sea todo required
+- [] listado de paquetes
+- [] ventas (crud)
+- [] probar links admin como select crear o listar
+- [] modal shows product info on package list
+- [] dark/light theme
 - [] 
 - [] 

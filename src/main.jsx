@@ -9,23 +9,33 @@ import Home from './views/Home.jsx';
 import Login from './views/Login.jsx';
 import Register from './views/Register.jsx';
 import Hotels from './views/Hotels.jsx';
+
 // admin
 import Admin from './views/Admin.jsx';
-// edit
-import AdminCarRental from './views/admin-views/admin-edit/AdminCarRental.jsx';
-import AdminHotel from './views/admin-views/admin-edit/AdminHotel.jsx';
-import AdminClient from './views/admin-views/admin-edit/AdminClient.jsx';
-import AdminEmployee from './views/admin-views/admin-edit/AdminEmployee.jsx';
-import AdminEvents from './views/admin-views/admin-edit/AdminEvent.jsx';
-import AdminExcursion from './views/admin-views/admin-edit/AdminExcursion.jsx';
-import AdminTickets from './views/admin-views/admin-edit/AdminTickets.jsx';
-import AdminPackage from './views/admin-views/admin-edit/AdminPackage.jsx';
+
+// create
+import { 
+  AdminCarRental,
+  AdminClient,
+  AdminEmployee,
+  AdminHotel,
+  AdminEvent,
+  AdminExcursion,
+  AdminPackage,
+  AdminTickets
+} from './views/admin-views/admin-create/'
+
 // list
 import CarRentalList from './views/admin-views/admin-list/CarRentalList.jsx';
 import AdminEventsList from './views/admin-views/admin-list/AdminEventsList.jsx';
 import AdminExcursionList from './views/admin-views/admin-list/AdminExcursionList.jsx';
 import AdminTicketsList from './views/admin-views/admin-list/AdminTicketsList.jsx';
 import AdminHotelList from './views/admin-views/admin-list/AdminHotelList.jsx';
+
+// edit
+import {
+  AdminCarRentalEdit
+} from './views/admin-views/admin-edit/'
 
 import ErrorPage from './views/ErrorPage.jsx';
 
@@ -81,15 +91,20 @@ const router = createBrowserRouter([
     element: <Admin />,
   },
   {
-    path: "/admin/car-rental",
+    path: "/admin/car-rental/create",
     element: <AdminCarRental />,
   },
   {
     path: "/admin/car-rental/list",
     element: <CarRentalList />
   },
+  // delete / from admin path
   {
-    path: "/admin/hotel",
+    path: "admin/car-rental/edit/:id",
+    element: <AdminCarRentalEdit />
+  },
+  {
+    path: "/admin/hotel/create",
     element: <AdminHotel />,
   },
   {
@@ -97,23 +112,23 @@ const router = createBrowserRouter([
     element: <AdminHotelList />,
   },
   {
-    path: "/admin/client",
+    path: "/admin/client/create",
     element: <AdminClient />,
   },
   {
-    path: "/admin/employee",
+    path: "/admin/employee/create",
     element: <AdminEmployee />,
   },
   {
-    path: "/admin/events",
-    element: <AdminEvents />,
+    path: "/admin/events/create",
+    element: <AdminEvent />,
   },
   {
     path: "/admin/events/list",
     element: <AdminEventsList />,
   },
   {
-    path: "/admin/excursion",
+    path: "/admin/excursion/create",
     element: <AdminExcursion />,
   },
   {
@@ -121,7 +136,7 @@ const router = createBrowserRouter([
     element: <AdminExcursionList />,
   },
   {
-    path: "/admin/tickets",
+    path: "/admin/tickets/create",
     element: <AdminTickets />
   },
   {
@@ -129,7 +144,7 @@ const router = createBrowserRouter([
     element: <AdminTicketsList />
   },
   {
-    path: "/admin/packages",
+    path: "/admin/packages/create",
     element: <AdminPackage />
   },
   {

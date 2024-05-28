@@ -1,9 +1,6 @@
 .navbar__container {
   top: 0;
   left: 0;
-  // @fix: edit backgound color
-  // background-color: var(--s-color-tertiary);
-  // border-bottom: 1px solid var(--s-color-quaternary);
 }
 
 .navbar__link--home {
@@ -54,39 +51,39 @@
   width: 15rem;
 }
 
+.navbar__list--admin {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  height: 460px;
+  justify-content: space-around;
+}
+
 .navbar__item--admin {
   align-items: center;
   display: flex;
   font-size: 1.3rem;
-  justify-content: space-between;
   line-height: normal;
-  list-style: none;
-  margin-right: 1.2rem;
 }
 
-.item__text {
-  width: 8rem
+.navbar__select {
+  background-color: inherit;
+  border: none;
+  color: var(--s-color-primary);
+  font-size: 1.3rem;
+  width: 100%;
 }
 
-.nav__btn {
-  @include button;
-  background-color: var(--s-color-primary);
-  border-radius: 6px;
-  color: var(--s-color-tertiary);
-  padding: 2px;
-
-    &:hover {
-    transform: scale(1.05);
-    transition: .3s ease-in-out;
-  }
+.navbar__option {
+  background-color: var(--s-color-tertiary);
 }
 // admin navbar
+
 
 .navbar__link {
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--s-color-secondary);
-  // color: var(--s-color-tertiary);
   white-space: nowrap;
 }
 

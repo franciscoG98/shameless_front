@@ -1,7 +1,18 @@
 import { NavLink } from "react-router-dom";
-import { CiViewList, CiEdit } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ admin }) => {
+
+  let navigate = useNavigate();
+
+  const handleNavigate = (event) => {
+    e.preventDefault()
+    const path = event.target.value
+    if (path) {
+      navigate(path)
+    }
+  };
+
   return (
     <div className={`navbar__container ${admin && "admin__navbar"}`}>
       {admin ? (
@@ -18,114 +29,84 @@ const Navbar = ({ admin }) => {
       {admin ? (
         <nav className="navbar--admin">
           {/* just for debbuging */}
-          <NavLink className="navbar__link" to="/">
+          <NavLink className="navbar__item--admin navbar__link" to="/">
             Client view
           </NavLink>
-          {/* just for debbuging */}
 
+          <ul className="navbar__list--admin">
+            {/* fix repetition breaks navigations (useEfect maybe) */}
+            <li className="navbar__item--admin">
+              <select className="navbar__select" onChange={handleNavigate} defaultValue="">
+                <option className="navbar__option" defaultValue="" disabled>Empleados</option>
+                <option className="navbar__option" value="/admin/employee/create">Crear Empleado</option>
+                <option className="navbar__option" value="/admin/employee/list">Listar Empleados</option>
+                <option className="navbar__option" value="/admin/employee/edit">Editar Empleados (no)</option>
+              </select>
+            </li>
 
-          <NavLink className="navbar__link" to="/admin/packages">
-            Paquetes
-          </NavLink>
+            <li className="navbar__item--admin">
+              <select className="navbar__select" onChange={handleNavigate} defaultValue="">
+                <option className="navbar__option" defaultValue="" disabled>Clientes</option>
+                <option className="navbar__option" value="/admin/client/create">Crear un Cliente</option>
+                <option className="navbar__option" value="/admin/client/list">Listar Clientes</option>
+                <option className="navbar__option" value="/admin/client/edit">Editar Clientes (no)</option>
+              </select>
+            </li>
 
-          <li className="navbar__item--admin">
-            <span className="item__text">Cliente</span>
-            <NavLink to="/admin/client">
-              <button className="nav__btn">
-                <CiEdit size={24} />
-              </button>
-            </NavLink>
-            {/* <NavLink  to="/admin/client/list">
-              <button className="nav__btn">
-                <CiViewList size={24} />
-              </button>
-            </NavLink> */}
-          </li>
+            <li className="navbar__item--admin">
+              <select className="navbar__select" onChange={handleNavigate} defaultValue="">
+                <option className="navbar__option" defaultValue="" disabled>Car Rental</option>
+                <option className="navbar__option" value="/admin/car-rental/create">Crear un Auto</option>
+                <option className="navbar__option" value="/admin/car-rental/list">Listar Autos</option>
+                <option className="navbar__option" value="/admin/car-rental/edit">Editar Autos (no)</option>
+              </select>
+            </li>
 
-          <li className="navbar__item--admin">
-            Empleado
-            <NavLink to="/admin/employee">
-              <button className="nav__btn">
-                <CiEdit size={24} />
-              </button>
-            </NavLink>
-            {/* <NavLink  to="/admin/employee/list">
-              <button className="nav__btn">
-                <CiViewList size={24} />
-              </button>
-            </NavLink> */}
-          </li>
+            <li className="navbar__item--admin">
+              <select className="navbar__select" onChange={handleNavigate} defaultValue="">
+                <option className="navbar__option" defaultValue="" disabled>Eventos</option>
+                <option className="navbar__option" value="/admin/events/create">Crear un Evento</option>
+                <option className="navbar__option" value="/admin/events/list">Listar Eventos</option>
+                <option className="navbar__option" value="/admin/events/edit">Editar Eventos (no)</option>
+              </select>
+            </li>
 
-          <li className="navbar__item--admin">
-            <span className="item__text">Car Rental</span>
-            <NavLink to="/admin/car-rental/list">
-              <button className="nav__btn">
-                <CiViewList size={24} />
-              </button>
-            </NavLink>
-            <NavLink to="/admin/car-rental">
-              <button className="nav__btn">
-                <CiEdit size={24} />
-              </button>
-            </NavLink>
-          </li>
+            <li className="navbar__item--admin">
+              <select className="navbar__select" onChange={handleNavigate} defaultValue="">
+                <option className="navbar__option" defaultValue="" disabled>Excursiones</option>
+                <option className="navbar__option" value="/admin/excursion/create">Crear una Excursión</option>
+                <option className="navbar__option" value="/admin/excursion/list">Listar Excursiones</option>
+                <option className="navbar__option" value="/admin/excursion/edit">Editar Excursiones (no)</option>
+              </select>
+            </li>
 
-          <li className="navbar__item--admin">
-            <span className="item__text">Eventos</span>
-            <NavLink to="/admin/events/list">
-              <button className="nav__btn">
-                <CiViewList size={24} />
-              </button>
-            </NavLink>
-            <NavLink to="/admin/events">
-              <button className="nav__btn">
-                <CiEdit size={24} />
-              </button>
-            </NavLink>
-          </li>
+            <li className="navbar__item--admin">
+              <select className="navbar__select" onChange={handleNavigate} defaultValue="">
+                <option className="navbar__option" defaultValue="" disabled>Hotel</option>
+                <option className="navbar__option" value="/admin/hotel/create">Crear un Hotel</option>
+                <option className="navbar__option" value="/admin/hotel/list">Listar Hoteles</option>
+                <option className="navbar__option" value="/admin/hotel/edit">Editar Hoteles (no)</option>
+              </select>
+            </li>
 
-          <li className="navbar__item--admin">
-            <span className="item__text">Excursiones</span>
-            <NavLink to="/admin/excursion/list">
-              <button className="nav__btn">
-                <CiViewList size={24} />
-              </button>
-            </NavLink>
-            <NavLink to="/admin/excursion">
-              <button className="nav__btn">
-                <CiEdit size={24} />
-              </button>
-            </NavLink>
-          </li>
+            <li className="navbar__item--admin">
+              <select className="navbar__select" onChange={handleNavigate} defaultValue="">
+                <option className="navbar__option" defaultValue="" disabled>Pasajes</option>
+                <option className="navbar__option" value="/admin/tickets/create">Crear un Pasaje</option>
+                <option className="navbar__option" value="/admin/tickets/list">Listar Pasajes</option>
+                <option className="navbar__option" value="/admin/tickets/edit">Editar Pasajes (no)</option>
+              </select>
+            </li>
 
-          <li className="navbar__item--admin">
-            <span className="item__text">Pasajes</span>
-            <NavLink to="/admin/tickets/list">
-              <button className="nav__btn">
-                <CiViewList size={24} />
-              </button>
-            </NavLink>
-            <NavLink to="/admin/tickets">
-              <button className="nav__btn">
-                <CiEdit size={24} />
-              </button>
-            </NavLink>
-          </li>
-
-          <li className="navbar__item--admin">
-            <span className="item__text">Hotel</span>
-            <NavLink to="/admin/hotel/list">
-              <button className="nav__btn">
-                <CiViewList size={24} />
-              </button>
-            </NavLink>
-            <NavLink to="/admin/hotel">
-              <button className="nav__btn">
-                <CiEdit size={24} />
-              </button>
-            </NavLink>
-          </li>
-
+            <li className="navbar__item--admin">
+              <select className="navbar__select" onChange={handleNavigate} defaultValue="">
+                <option className="navbar__option" defaultValue="" disabled>Paquetes</option>
+                <option className="navbar__option" value="/admin/packages/create">Crear un Paquete</option>
+                <option className="navbar__option" value="/admin/packages/list">Listar Paquetes</option>
+                <option className="navbar__option" value="/admin/packages/edit">Editar Paquetes (no)</option>
+              </select>
+            </li>
+          </ul>
         </nav>
       ) : (
         <nav className="navbar">

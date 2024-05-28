@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import toast, { Toaster } from 'react-hot-toast';
+import { postProducts } from "../service/postProduct";
 
 const Form = ({ fields, fetchUrl }) => {
 
@@ -18,19 +19,10 @@ const Form = ({ fields, fetchUrl }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(fetchUrl, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(productState)
-    })
-    .then( async res => {
+    postProducts(fetchUrl, productState)
+    .then(res => {
       if(res.ok) {
         setProductState(initialState)
-        // alert('form ok')
         toast.success('Formulario enviado exitosamente!')
       } else {
         console.log('Hay un error')
@@ -40,31 +32,6 @@ const Form = ({ fields, fetchUrl }) => {
     .catch((err) => {
       console.log('Error: ', err)
       toast.error("Oh no! ocurrió un error :(")
-    })
-  }
-
-  const handleEdit = (e) => {
-    e.preventDefault();
-
-    fetch(fetchUrl, {
-      method: "PUT",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(productState)
-    })
-    .then( async res => {
-      if(res.ok) {
-        setProductState(initialState)
-        alert('form ok')
-      } else {
-        console.log('Hay un error')
-      }
-    })
-    .catch((err) => {
-      console.log('Error: ', err)
     })
   }
 
@@ -153,15 +120,6 @@ const Form = ({ fields, fetchUrl }) => {
         type="submit"
       >
         Crear
-      </button>
-
-      <br />
-
-      <button
-        className="form__btn"
-        onSubmit={(e) => handleEdit(e)}
-      >
-        Editar
       </button>
     </form>
   );
