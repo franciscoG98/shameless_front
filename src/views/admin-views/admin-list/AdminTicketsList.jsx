@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../../components/Navbar";
+import AdminNavbar from "../../../components/AdminNavbar";
 import { getProducts } from "../../../service/getProducts";
+import Table from "../../../components/Table";
 
 const AdminTicketsList = () => {
 
@@ -15,38 +16,24 @@ const AdminTicketsList = () => {
     fetchData();
   }, []);
 
+  const table_headers = [
+    'Nombre',
+    'Descripción',
+    'Fecha de Inicio',
+    'Precio',
+    'Tipo de pasaje',
+    'Origen',
+    'Destino',
+  ]
+
   return (
     <main>
-    <Navbar admin={true} />
+    <AdminNavbar />
     <h1>Lista de Pasajes</h1>
 
-    <table className="table">
-      <tr className="table__header">
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Tipo de pasaje</th>
-        <th>Fecha de Inicio</th>
-        <th>Origen</th>
-        <th>Destino</th>
-        <th>Precio</th>
-      </tr>
+    <Table table_headers={table_headers} data={tickets} />
 
-      {
-        tickets.map(ticket => (
-          <tr key={ticket.productCode}>
-            <td>{ticket.name}</td>
-            <td>{ticket.descript}</td>
-            <td>{ticket.ticketType}</td>
-            <td>{ticket.startDate}</td>
-            <td>{ticket.origin}</td>
-            <td>{ticket.destination}</td>
-            <td>${ticket.price}</td>
-          </tr>
-        ))
-      }
-    </table>
-  </main>
-
+    </main>
   )
 }
 

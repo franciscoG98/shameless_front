@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../../components/Navbar";
+import AdminNavbar from "../../../components/AdminNavbar";
 import { getProducts } from "../../../service/getProducts";
+import Table from "../../../components/Table";
 
 const AdminExcursionList = () => {
 
@@ -15,37 +16,22 @@ const AdminExcursionList = () => {
     fetchData();
   }, []);
 
+  const table_headers = [
+    'Nombre',
+    'Descripción',
+    'Fecha de Inicio',
+    'Precio',
+    'Destino',
+    'Duración',
+    'Origen',
+  ]
+
   return (
     <main>
-    <Navbar admin={true} />
-    <h1>Lista de Excursiones</h1>
-
-    <table className="table">
-      <tr className="table__header">
-        <th>Nombre</th>
-        <th>Origen</th>
-        <th>Destino</th>
-        <th>Duración</th>
-        <th>Fecha de Inicio</th>
-        <th>Descripción</th>
-        <th>Precio</th>
-      </tr>
-
-      {
-        excursions.map(excursion => (
-          <tr key={excursion.productCode}>
-            <td>{excursion.name}</td>
-            <td>{excursion.origin}</td>
-            <td>{excursion.destination}</td>
-            <td>{excursion.duration}</td>
-            <td>{excursion.startDate}</td>
-            <td>{excursion.descript}</td>
-            <td>${excursion.price}</td>
-          </tr>
-        ))
-      }
-    </table>
-  </main>
+      <AdminNavbar />
+      <h1>Lista de Excursiones</h1>
+      <Table table_headers={table_headers} data={excursions} />
+    </main>
   )
 }
 

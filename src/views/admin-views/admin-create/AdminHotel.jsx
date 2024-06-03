@@ -1,5 +1,5 @@
 import Form from "../../../components/Form";
-import Navbar from "../../../components/Navbar";
+import AdminNavbar from "../../../components/AdminNavbar";
 
 const AdminHotel = () => {
 
@@ -39,12 +39,12 @@ const AdminHotel = () => {
 
   return (
     <>
-      <Navbar admin={true} />
+      <AdminNavbar />
 
       <h1 className="form__title">Hotel</h1>
 
       <Form
-        fetchUrl={"http://localhost:8080/hotelpernight/registry"}
+        fetchUrl={"hotelpernight/registry"}
         fields={fields}
       />
     </>

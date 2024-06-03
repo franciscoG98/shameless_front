@@ -1,31 +1,29 @@
-.table {
-  border-collapse: collapse;
+.table__container {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
   margin-left: 24rem;
   margin-top: 3rem;
-  text-align: left;
-  width: 800px;
+  width: fit-content;
 }
 
-.table, th, td {
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  // word-break: break-word;
+}
+
+.tbody__row {
   border: 1px solid;
-  word-break: break-word;
 }
 
 th {
   padding: 12px 8px;
-  text-align: center;
+  font-size: 1.3rem;
 }
 
 td {
-  padding: 8px;
-  max-width: 2.5rem;
+  padding: 16px;
+  text-transform: capitalize;
 }
-
-.table__btn {
-  background-color: transparent;
-  border: none;
-}
-
-.table__btn--edit {}
-
-.table__btn--delete {}

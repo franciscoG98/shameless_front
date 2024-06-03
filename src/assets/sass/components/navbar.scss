@@ -21,12 +21,31 @@
   width: fit-content;
 }
 
+.navbar__link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--s-color-secondary);
+  white-space: nowrap;
+}
+
+.navbar__link:hover {
+  text-decoration: underline;
+  transition: .2s;
+}
+
+a.active {
+  color: var(--s-color-primary);
+  color: var(--s-color-primary);
+  font-weight: 900;
+  text-decoration: none;
+}
+
 // admin navbar
 .admin__navbar {
   border-right: 1px solid var(--s-color-quaternary);
   border-bottom: 0;
   position: fixed;
-  width: 18rem;
+  width: 20rem;
   height: 100vh;
 }
 
@@ -43,58 +62,49 @@
 .navbar--admin {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
   justify-content: space-around;
   margin-left: 2rem;
-  margin-top: 3rem;
   text-align: left;
-  width: 15rem;
 }
 
 .navbar__list--admin {
   display: flex;
   flex-direction: column;
   list-style: none;
-  height: 460px;
   justify-content: space-around;
 }
 
-.navbar__item--admin {
-  align-items: center;
-  display: flex;
-  font-size: 1.3rem;
-  line-height: normal;
-}
-
-.navbar__select {
-  background-color: inherit;
-  border: none;
+// collapse items
+.navbar__item--collapsible {
   color: var(--s-color-primary);
-  font-size: 1.3rem;
-  width: 100%;
+  font-size: 1.4rem;
+  overflow: hidden;
 }
 
-.navbar__option {
-  background-color: var(--s-color-tertiary);
-}
-// admin navbar
+.collapsible-input {
+  display: none;
 
-
-.navbar__link {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: var(--s-color-secondary);
-  white-space: nowrap;
+  &:checked+.collapsible-label+.collapsible-content {
+    max-height: 6rem;
+  }
 }
 
-.navbar__link:hover {
-  font-weight: 600;
+.collapsible-label {
+  display: block;
+  cursor: pointer;
+  padding: 12px;
+  font-size: 1.6rem;
+}
+
+.collapsible-label:hover {
+  text-decoration: underline;
   transition: .2s;
 }
 
-a.active {
-  color: var(--s-color-primary);
-  color: var(--s-color-primary);
-  font-weight: 900;
-  text-decoration: none;
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  margin-left: 1.2rem;
 }

@@ -1,4 +1,5 @@
 export const postProducts = async (path, product) => {
+
   const response = await fetch(`http://localhost:8080/${path}`, {
     method: "POST",
     mode: "cors",
@@ -8,7 +9,7 @@ export const postProducts = async (path, product) => {
     },
     body: JSON.stringify(product)
   });
-  const products = await response.json();
+  const products = response;
 
   return products;
 }

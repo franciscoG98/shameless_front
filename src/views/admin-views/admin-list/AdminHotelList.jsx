@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../../components/Navbar";
+import AdminNavbar from "../../../components/AdminNavbar";
 import { getProducts } from "../../../service/getProducts";
+import Table from "../../../components/Table";
 
 const AdminHotelList = () => {
 
@@ -15,35 +16,21 @@ const AdminHotelList = () => {
     fetchData();
   }, []);
 
+  const table_headers = [
+    'Nombre',
+    'Descripción',
+    'Fecha de Inicio',
+    'Precio',
+    'Ubicación',
+    'Número de Huespedes',
+  ]
+
   return (
     <main>
-    <Navbar admin={true} />
-    <h1>Lista de Hoteles</h1>
-
-    <table className="table">
-      <tr className="table__header">
-        <th>Nombre</th>
-        <th>Ubicación</th>
-        <th>Número de Huespedes</th>
-        <th>Fecha de Inicio</th>
-        <th>Descripción</th>
-        <th>Precio</th>
-      </tr>
-
-      {
-        hotels.map(hotel => (
-          <tr key={hotel.productCode}>
-            <td>{hotel.name}</td>
-            <td>{hotel.ubication}</td>
-            <td>{hotel.numbOfRooms}</td>
-            <td>{hotel.startDate}</td>
-            <td>{hotel.descript}</td>
-            <td>${hotel.price}</td>
-          </tr>
-        ))
-      }
-    </table>
-  </main>
+      <AdminNavbar />
+      <h1>Lista de Hoteles</h1>
+      <Table table_headers={table_headers} data={hotels} />
+    </main>
   )
 }
 

@@ -9,6 +9,10 @@ import Home from './views/Home.jsx';
 import Login from './views/Login.jsx';
 import Register from './views/Register.jsx';
 import Hotels from './views/Hotels.jsx';
+import Cars from './views/Cars.jsx';
+import Events from './views/Events.jsx';
+import Excursions from './views/Excursions.jsx';
+import Tickets from './views/Tickets.jsx';
 
 // admin
 import Admin from './views/Admin.jsx';
@@ -58,34 +62,22 @@ const router = createBrowserRouter([
     path: "/hotels",
     element: <Hotels />,
   },
-  // {
-  //   path: "admin",
-  //   element: (
-  //     <>
-  //       <Admin />
-  //       <Outlet />
-  //     </>
-  //   ),
-  //   element: <AdminWithSubroutes />,
-  //   children: [
-  //     { 
-  //       path: "car-rental",
-  //       element: <AdminCarRental />
-  //     },
-  //     { 
-  //       path: "hotel",
-  //       element: <AdminHotel />
-  //     },
-  //     { 
-  //       path: "client",
-  //       element: <AdminClient />
-  //     },
-  //     { 
-  //       path: "employee",
-  //       element: <AdminEmployee />
-  //     },
-  //   ]
-  // },
+  {
+    path: "/cars",
+    element: <Cars />,
+  },
+  {
+    path: "/events",
+    element: <Events />,
+  },
+  {
+    path: "/tours",
+    element: <Excursions />,
+  },
+  {
+    path: "/tickets",
+    element: <Tickets />,
+  },
   {
     path: "/admin",
     element: <Admin />,

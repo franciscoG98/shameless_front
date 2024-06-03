@@ -3,14 +3,14 @@ import { getProducts } from "../service/getProducts";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 
-const Hotels = () => {
+const Cars = () => {
 
-  const [hotels, setHotels] = useState([]);
+  const [cars, setCars] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const hotels = await getProducts("hotelpernight/get-hotels");
-      setHotels(hotels);
+      const cars = await getProducts("carrental/get-cars");
+      setCars(cars);
     };
 
     fetchData();
@@ -19,11 +19,12 @@ const Hotels = () => {
   return (
     <>
       <Navbar />
-      <h1>Hoteles</h1>
+      <h1>Autos</h1>
+
       <main className="hoteles__container">
         {
-          hotels.map(hotel => (
-            <Card key={hotel.productCode} type={'hotel'} data={hotel} />
+          cars.map(car => (
+            <Card key={car.productCode} type={'car'} data={car} />
           ))
         }
       </main>
@@ -31,4 +32,4 @@ const Hotels = () => {
   )
 }
 
-export default Hotels
+export default Cars

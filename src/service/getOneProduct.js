@@ -1,10 +1,6 @@
-export const getOneProduct = async (path, productCode) => {
+export const getOneProduct = async (path) => {
 
-  console.log('path ', path);
-  console.log('productCode ', productCode);
-  // esto recibe la ruta el id (productCode) y hago el fetch
-
-  const response = await fetch(`http://localhost:8080/${path}/${productCode}`, {
+  const response = await fetch(`http://localhost:8080/${path}`, {
     method: "GET",
     mode: "cors",
     headers: {
@@ -12,6 +8,11 @@ export const getOneProduct = async (path, productCode) => {
       "Access-Control-Allow-Origin": "*",
     },
   });
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
   const singleProduct = await response.json();
 
   return singleProduct;

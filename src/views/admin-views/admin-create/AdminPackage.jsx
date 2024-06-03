@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Form from "../../../components/Form";
-import Navbar from "../../../components/Navbar";
+import AdminNavbar from "../../../components/AdminNavbar";
 import { getProducts } from "../../../service/getProducts";
 
 const AdminPackage = () => {
@@ -103,13 +103,13 @@ const AdminPackage = () => {
 
   return (
     <main>
-      <Navbar admin={true} />
+      <AdminNavbar />
 
       <h1 className="form__title">Paquetes Turísticos</h1>
 
       <Form
         fields={fields}
-        fetchUrl={"http://localhost:8080/touristpackage/registry"}
+        fetchUrl={"touristpackage/registry"}
       />
     </main>
   );

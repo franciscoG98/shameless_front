@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import Navbar from "../../../components/Navbar";
+import AdminNavbar from "../../../components/AdminNavbar";
 import { getProducts } from "../../../service/getProducts";
-import { MdDeleteForever } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import Table from "../../../components/Table";
 
 const CarRentalList = () => {
 
@@ -18,50 +16,20 @@ const CarRentalList = () => {
     fetchData();
   }, []);
 
+  const table_headers = [
+    'Nombre',
+    'Tipo de Auto',
+    'Precio',
+    'Descripción',
+    'Fecha de Inicio',
+    'Fecha Limite',
+  ]
+
   return (
     <main>
-      <Navbar admin={true} />
+      <AdminNavbar />
       <h1>Lista de Autos</h1>
-
-      <table className="table">
-        <thead>
-          <tr className="table__header">
-            <th>Nombre</th>
-            <th>Tipo de Auto</th>
-            <th>Precio</th>
-            <th>Descripción</th>
-            <th>Fecha de Inicio</th>
-            <th>Fecha Limite</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {
-            cars.map(car => (
-              <tr key={car.productCode}>
-                <td>{car.name}</td>
-                <td>{car.carType}</td>
-                <td>$ {car.price}</td>
-                <td>{car.descript}</td>
-                <td>{car.startDate}</td>
-                <td>{car.deadlineDate}</td>
-                <th>
-                  <Link to={`/admin/car-rental/edit/${car.productCode}`}>
-                    <FaEdit size={24} color={'green'} />
-                  </Link>
-                </th>
-                <th>
-                  <button className="table__btn table__btn--delete">
-                    <MdDeleteForever size={24} color={'red'} />
-                  </button>
-                </th>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
+      <Table table_headers={table_headers} data={cars} />
     </main>
   )
 }

@@ -40,8 +40,6 @@ const Form = ({ fields, fetchUrl }) => {
     setProductState({ ...productState, [name]: value });
   };
 
-  console.log();
-
   return (
     <form  method="post" className="form__container" onSubmit={(e) => handleSubmit(e)}>
       <div><Toaster/></div>
